@@ -30,12 +30,37 @@ html, body {
 .form-div {
   margin: 20px;
 }
-.form-div form {
+
+.form {
   display: grid;
-  grid-template: 40px 40px 40px 40px/1fr 1fr 1fr 1fr;
+  grid-template: 40px 40px/1fr 1fr 1fr 1fr;
   gap: 20px;
 }
-.form-div form button {
-  grid-column: 1/-1;
+.form button {
+  grid-column: 2/4;
+  border: 0;
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: white;
   border-radius: 5px;
+  cursor: pointer;
+}
+.form input {
+  border-radius: 5px;
+  border: 1px solid grey;
+  text-indent: 5px;
+}
+
+.top-text {
+  grid-column: 2/3;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.image-div {
+  display: flex;
+  justify-content: center;
+  height: 750px;
+  width: 750px;
 }/*# sourceMappingURL=style.css.map */

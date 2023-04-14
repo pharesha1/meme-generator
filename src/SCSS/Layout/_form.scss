@@ -1,0 +1,41 @@
+@import '../Variables/variables';
+
+.form-div{
+    margin: 20px;
+}
+
+.form{
+    display: grid;
+    grid-template: 40px 40px /  1fr 1fr 1fr 1fr;
+    gap: 20px;
+    
+    button{
+        grid-column: 2 / 4;
+        border: 0;
+        background: $gradient-color;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input{
+        border-radius: 5px;
+        border: 1px solid grey;
+        text-indent: 5px;
+    }
+}
+
+.top-text{
+    grid-column: 2/3;
+}
+
+.image{
+    max-width: 100%;
+}
+
+.image-div{
+    display: flex;
+    justify-content: center;
+    height: 750px;
+    width: 750px;
+}

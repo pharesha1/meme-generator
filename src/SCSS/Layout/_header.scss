@@ -1,6 +1,8 @@
+@import '../Variables/variables';
+
 .header-div{
     color: white;
-    background-image: linear-gradient(to right, #43cea2, #185a9d);
+    background-image: $gradient-color;
     display: flex;
     padding: 30px;
     header{
