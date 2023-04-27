@@ -13,6 +13,7 @@ html, body {
   background-image: linear-gradient(to right, #43cea2, #185a9d);
   display: flex;
   padding: 30px;
+  max-width: 100%;
 }
 .header-div header {
   display: flex;
@@ -45,6 +46,7 @@ html, body {
   cursor: pointer;
 }
 .form input {
+  width: 100%;
   border-radius: 5px;
   border: 1px solid grey;
   text-indent: 5px;
@@ -55,12 +57,24 @@ html, body {
 }
 
 .image {
+  max-height: 550px;
   max-width: 100%;
+  border: 5px solid black;
 }
 
 .image-div {
+  padding: 20px;
   display: flex;
   justify-content: center;
-  height: 750px;
-  width: 750px;
+}
+
+.boxes {
+  display: flex;
+}
+
+.box {
+  border: 3px solid black;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
 }/*# sourceMappingURL=style.css.map */
