@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState} from "react";
 import memesData from "./memesData";
 
 export default function Form (){
 
     const [allMemeImages, setAllMemeImages] = React.useState(memesData);
 
-    const [meme, setMeme] = React.useState({
-        topText :"",
+    const [meme, setMeme] = useState({
+        topText:"",
         bottomText:"",
-        randomImage : "https://i.imgflip.com/30b1gx.jpg"
+        randomImage: "https://i.imgflip.com/30b1gx.jpg"
     });
 
     function generateMeme(){
@@ -19,76 +19,44 @@ export default function Form (){
         }));
     }
 
-    const [memeTexts, setMemeTexts] = React.useState({topText: "", bottomText: "", checkbox: false, employment: ""});
-
-    console.log(memeTexts);
-
     function changeHandler(event){
-        const {name, value, type, checked} = event.target;
-        setMemeTexts(prevMemeTexts => {
-            return {
-                ...prevMemeTexts,
-                [name]: type === "checkbox"? checked : value
+        const {name, value} = event.target;
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
             }
-        });
+        ));
     }
 
     return(
         <div className="form-div">
+
+            <div>
+            </div>
+
             <div className="form">
                 <input 
                     type="text" 
                     placeholder="Top Text" 
                     className="top-text" 
-                    onChange={changeHandler} 
                     name="topText"
-                    value={memeTexts.topText}
+                    onChange={changeHandler}
+                    value={meme.topText}
                 />
                 <input 
                     type="text" 
                     placeholder="Bottom Text" 
                     className="bottom-text" 
-                    onChange={changeHandler} 
                     name="bottomText"
-                    value={memeTexts.bottomText}
-                />
-                <input 
-                    type="checkbox" 
-                    onChange={changeHandler} 
-                    name="checkbox"
-                    checked={memeTexts.checkbox}
+                    onChange={changeHandler}
+                    value={meme.bottomText}
                 />
                 <button onClick={generateMeme}>Generate a New Meme</button>
             </div>
 
-            <fieldset>
-                <input
-                    type="radio"
-                    id="unemployed"
-                    name="employment"
-                    value="unemployed"
-                    onChange={changeHandler}
-                />
-                <label htmlFor="unemployed">Unemployed</label>
-                <input
-                    type="radio"
-                    id="full-time"
-                    name="employment"
-                    value="full-time"
-                    onChange={changeHandler}
-                />
-                <label htmlFor="full-time">Full-time</label>
-                <input
-                    type="radio"
-                    id="part-time"
-                    name="employment"
-                    value="part-time"
-                    onChange={changeHandler}
-                />
-                <label htmlFor="part-time">Part-time</label>
-            </fieldset>
-
-            <div className="image-div">
+            <div className="meme-div">
+                <h2 className="meme-div--top-text">{meme.topText}</h2>
+                <h2 className="meme-div--bottom-text">{meme.bottomText}</h2>
                 <img src={meme.randomImage} alt="meme" className="image"/>
             </div>
         </div>
