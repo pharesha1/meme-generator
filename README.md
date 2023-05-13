@@ -1,4 +1,4 @@
-Check the finished project in [Meme Generator](https://pharesha-meme-generator.netlify.app/)
+# Check the finished project in [Meme Generator](https://pharesha-meme-generator.netlify.app/)
 
 # Getting Started with Create React App
 
